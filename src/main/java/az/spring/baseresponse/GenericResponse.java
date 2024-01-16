@@ -1,4 +1,4 @@
-package az.spring.response;
+package az.spring.baseresponse;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -12,33 +12,21 @@ import org.springframework.http.HttpStatus;
 public class GenericResponse <T> {
 
     HttpStatus status;
-    Meta meta;
+    String message;
     T data;
-
-    @AllArgsConstructor(access = AccessLevel.PRIVATE)
-    @NoArgsConstructor(access = AccessLevel.PRIVATE)
-    @Builder
-    @Data
-    @FieldDefaults(level = AccessLevel.PRIVATE)
-    public static class Meta {
-
-        String key;
-        String message;
-
-
-        public static Meta of(String key, String message) {
-            return Meta.builder()
-                    .key(key)
-                    .message(message)
-                    .build();
-        }
-    }
 
 
     public static <T> GenericResponse <T> success(T data){
         return GenericResponse.<T>builder()
                 .status(HttpStatus.OK)
-                .meta(Meta.of("sucess", "Successfully"))
+                .message("Successfully")
+                .data(data)
+                .build();
+    }
+    public static <T> GenericResponse <T> error(T data){
+        return GenericResponse.<T>builder()
+                .status(HttpStatus.BAD_REQUEST)
+                .message("Error")
                 .data(data)
                 .build();
     }

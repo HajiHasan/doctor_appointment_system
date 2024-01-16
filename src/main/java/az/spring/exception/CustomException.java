@@ -3,12 +3,12 @@ package az.spring.exception;
 import lombok.Getter;
 
 @Getter
-public class ResourceNotFoundException extends RuntimeException{
+public class CustomException extends RuntimeException{
 
     private final String message;
 
 
-    public ResourceNotFoundException(Enums enums) {
+    public CustomException(Enums enums) {
         this.message = enums.getMessage();
     }
 }

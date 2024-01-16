@@ -1,5 +1,6 @@
 package az.spring.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -12,7 +13,7 @@ import java.util.List;
 @Builder(access = AccessLevel.PROTECTED)
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Patient {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
@@ -26,16 +27,15 @@ public class Patient {
     String bloodGroup;
     @Column(length = 10,nullable = false)
     String gender;
-    @Column(length = 100,nullable = false)
-    String problems;
-    @Column(length = 50,nullable = false)
+    @Column(nullable = false)
     String password;
 
     @ManyToOne
-    Roles role;  // role_id
+    Roles role;
 
-    @OneToMany(mappedBy = "patientId")
-    List<Appointment> appointments;
+//    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+//    @ToString.Exclude
+//    List<Appointment> appointments;
 
 
 

@@ -1,4 +1,4 @@
-package az.spring.security;
+package az.spring.security.user;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;

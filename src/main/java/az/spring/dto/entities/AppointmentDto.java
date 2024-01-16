@@ -1,4 +1,4 @@
-package az.spring.dto.request;
+package az.spring.dto.entities;
 
 import az.spring.model.Appointment;
 import az.spring.model.User;

@@ -1,4 +1,4 @@
-package az.spring.dto.request;
+package az.spring.dto.entities;
 
 import az.spring.model.Roles;
 import jakarta.validation.constraints.NotBlank;
@@ -11,15 +11,15 @@ import lombok.experimental.FieldDefaults;
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class DoctorDto {
-    @NotBlank
+
     String name;
-    @NotBlank
+
     String surname;
-    @NotBlank
+
     String email;
-    @NotBlank
+
     String speciality;
-    @NotBlank
+
     String password;
 
 }

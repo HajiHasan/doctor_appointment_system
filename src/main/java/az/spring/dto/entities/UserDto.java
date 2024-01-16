@@ -1,4 +1,4 @@
-package az.spring.dto.request;
+package az.spring.dto.entities;
 
 import az.spring.model.Roles;
 import jakarta.validation.constraints.NotBlank;

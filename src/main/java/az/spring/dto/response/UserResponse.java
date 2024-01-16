@@ -1,4 +1,9 @@
 package az.spring.dto.response;
 
-public class PatientResponse {
+import az.spring.dto.entities.UserDto;
+
+import java.util.List;
+
+public class UserResponse {
+    List<UserDto> userDtos;
 }
